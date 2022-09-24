@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-22T10:23:28 IST" name="Default suite" finished-at="2022-09-22T10:23:44 IST" duration-ms="16365">
+  <suite started-at="2022-09-24T21:30:14 IST" name="Default suite" finished-at="2022-09-24T21:30:19 IST" duration-ms="4964">
     <groups>
     </groups>
-    <test started-at="2022-09-22T10:23:28 IST" name="Default test" finished-at="2022-09-22T10:23:44 IST" duration-ms="16365">
+    <test started-at="2022-09-24T21:30:14 IST" name="Default test" finished-at="2022-09-24T21:30:19 IST" duration-ms="4964">
       <class name="NewTest">
-        <test-method is-config="true" signature="intialization()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-22T10:23:28 IST" name="intialization" finished-at="2022-09-22T10:23:35 IST" duration-ms="7117" status="PASS">
+        <test-method is-config="true" signature="intialization()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-24T21:30:14 IST" name="intialization" finished-at="2022-09-24T21:30:16 IST" duration-ms="2387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intialization -->
-        <test-method signature="keyin_Credentials()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-22T10:23:35 IST" name="keyin_Credentials" finished-at="2022-09-22T10:23:44 IST" duration-ms="8966" status="PASS">
+        <test-method signature="verifyWebelementFunctions()[pri:5, instance:NewTest@2667f029]" started-at="2022-09-24T21:30:16 IST" name="verifyWebelementFunctions" finished-at="2022-09-24T21:30:16 IST" duration-ms="75" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- keyin_Credentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-22T10:23:44 IST" name="tearDown" finished-at="2022-09-22T10:23:44 IST" duration-ms="267" status="PASS">
+        </test-method> <!-- verifyWebelementFunctions -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-24T21:30:16 IST" name="tearDown" finished-at="2022-09-24T21:30:19 IST" duration-ms="2475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

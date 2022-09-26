@@ -5,9 +5,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.beust.jcommander.JCommander.Builder;
 
 public class NewTest {
 	public WebDriver driver;
@@ -18,8 +21,8 @@ public class NewTest {
 	  driver.manage().window().maximize();
 	  driver.manage().deleteAllCookies();
 	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	  //driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-	  driver.get("https://www.google.co.in/");
+	  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	  //driver.get("https://www.google.co.in/");
 	  //driver.get("https://www.facebook.com/");
 	  //driver.get("https://demoqa.com/radio-button");
   }
@@ -66,7 +69,7 @@ public class NewTest {
 	  System.out.println(GoogleSearch_Input.getAttribute("name"));
 	  GoogleSearch_Input.submit();
 	  Thread.sleep(3000);
-  }*/
+  }
  @Test(priority=5)
  public void verifyWebelementFunctions() {
 	 /*WebElement Disabled_Button=driver.findElement(By.xpath("//input[@class='custom-control-input disabled']"));
@@ -91,12 +94,79 @@ public class NewTest {
 	 System.out.println(GoogleSearch_Button.isSelected());
 	 System.out.println(Disabled_Button.isEnabled());
 	 System.out.println(Disabled_Button.isDisplayed());
-	 System.out.println(Yes_Button.isDisplayed());*/
+	 System.out.println(Yes_Button.isDisplayed());
 	WebElement google=driver.findElement(By.xpath("//input[@name='q']"));
 	WebElement mikeIcon=driver.findElement(By.xpath("//div[@class='XDyW0e']"));
 	 System.out.println(google.isDisplayed());
 	 System.out.println(mikeIcon.isDisplayed());
  }
+ @Test(priority=6)
+ public void verifyIsSelectedMethod() throws InterruptedException {
+	 WebElement Username_Entry=driver.findElement(By.xpath("//input[@name='username']"));
+	 WebElement Password_Entry=driver.findElement(By.xpath("//input[@name='password']"));
+	 WebElement Login_Button=driver.findElement(By.xpath("//button[starts-with(@class,'oxd-butt')]"));
+	
+	 Username_Entry.sendKeys("Admin");
+	 Password_Entry.sendKeys("admin123");
+	 Login_Button.click();
+	 Thread.sleep(4000);
+	 WebElement MyInfo_link=driver.findElement(By.xpath("//a[@href='/web/index.php/pim/viewMyDetails']"));
+	 MyInfo_link.click();
+	 Thread.sleep(2000);
+	 WebElement Feamle_RadioButton=driver.findElement(By.xpath("//input[@type='radio' and @value='2']"));
+	 Feamle_RadioButton.click();
+	 Thread.sleep(2000);
+	 System.out.println(Feamle_RadioButton.isSelected()); 
+ }
+ @Test(priority=7)
+ public void verifyActionMethods()throws InterruptedException {
+	 WebElement forgot_Password=driver.findElement(By.xpath("//p[text()='Forgot your password? ']"));
+	 Actions Builder=new Actions(driver);
+	 Thread.sleep(4000);
+	 Builder.moveToElement(forgot_Password).contextClick();
+	 Builder.perform();
+	 Thread.sleep(3000);
+ }
+ @Test(priority=8)
+ public void verifyAdvancedAcctions() throws InterruptedException{
+	driver.get("https://demoqa.com/droppable");
+	WebElement Source=driver.findElement(By.xpath("//div[@id='draggable']"));
+	WebElement Destination=driver.findElement(By.xpath("//div[@id='droppable'][1]"));
+	Actions builder=new Actions(driver);
+	Thread.sleep(3000);
+	builder.dragAndDrop(Source, Destination);
+	builder.perform();
+	Thread .sleep(3000);
+ }
+ @Test(priority=9)
+ public void Release() throws InterruptedException {
+ driver.get("https://demoqa.com/droppable");
+	WebElement Source=driver.findElement(By.xpath("//div[@id='draggable']"));
+	WebElement Destination=driver.findElement(By.xpath("//div[@id='droppable'][1]"));
+	Actions builder=new Actions(driver);
+	Thread.sleep(3000);
+	builder.clickAndHold(Source).release(Destination).perform();
+	Thread.sleep(2000);
+ }
+ @Test(priority=10)
+ public void verifydoubleClick() throws InterruptedException{
+	 driver.get("https://demoqa.com/buttons");
+	 WebElement DoubleClick_Button=driver.findElement(By.xpath("//button[text()='Double Click Me']"));
+	 Actions builder=new Actions(driver);
+	 builder.doubleClick(DoubleClick_Button).perform();
+	 Thread.sleep(3000);
+ }*/
+  @Test(priority=11)
+  public void verifyActionsSendKeys() throws InterruptedException {
+	  driver.get("https://demoqa.com/text-box");
+	  WebElement TextBox=driver.findElement(By.xpath("//input[@id='userName']"));
+	  Actions builder=new Actions(driver);
+	  Thread.sleep(3000);
+	  builder.moveToElement(TextBox).click();
+	  builder.keyDown(Keys.SHIFT).sendKeys("jiokiop bkhfb khbkf").keyUp(Keys.SHIFT).perform();
+	  Thread.sleep(3000);
+	  
+	  }
   @AfterTest()
   public void tearDown() {
 	  driver.close();

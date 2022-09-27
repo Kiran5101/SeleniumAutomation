@@ -1,7 +1,10 @@
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -155,7 +158,7 @@ public class NewTest {
 	 Actions builder=new Actions(driver);
 	 builder.doubleClick(DoubleClick_Button).perform();
 	 Thread.sleep(3000);
- }*/
+ }
   @Test(priority=11)
   public void verifyActionsSendKeys() throws InterruptedException {
 	  driver.get("https://demoqa.com/text-box");
@@ -166,6 +169,32 @@ public class NewTest {
 	  builder.keyDown(Keys.SHIFT).sendKeys("jiokiop bkhfb khbkf").keyUp(Keys.SHIFT).perform();
 	  Thread.sleep(3000);
 	  
+	  }
+  @Test(priority=12)
+  public void capabilitiesConcept() {
+	  driver.navigate().to("https://demoqa.com/text-box");
+	  File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  System.out.println(scrFile.getAbsolutePath());
+  }*/
+  @Test(priority=13)
+  public void windowsHandling() throws InterruptedException {
+	  driver.navigate().to("https://demoqa.com/browser-windows");
+	  WebElement New_Window=driver.findElement(By.xpath("//button[text()='New Window']"));
+	  WebElement New_Tab=driver.findElement(By.xpath("//button[text()='New Tab']"));
+	  WebElement New_WindowMessage=driver.findElement(By.xpath("//button[text()='New Window Message']"));
+	  String window1=driver.getWindowHandle();
+	  New_Window.click();
+	  Thread.sleep(3000);
+	  String window2=driver.getWindowHandle();
+	  driver.switchTo().window(window1);
+	  New_Tab.click();
+	  String window3=driver.getWindowHandle();
+	  System.out.println(window1);
+	  System.out.println(window2);
+	  System.out.println(window3);
+	  Thread.sleep(3000);
+	  driver.switchTo().window(window3);
+	  Thread.sleep(3000);
 	  }
   @AfterTest()
   public void tearDown() {

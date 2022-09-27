@@ -29,7 +29,7 @@ public class NewTest {
 	  //driver.get("https://www.facebook.com/");
 	  //driver.get("https://demoqa.com/radio-button");
   }
- /* @Test(priority=1)
+ @Test(priority=1)
   public void keyin_Credentials() throws InterruptedException {
 	  WebElement Username_Entry=driver.findElement(By.name("username"));
 	  WebElement Password_Entry=driver.findElement(By.name("password"));
@@ -75,7 +75,7 @@ public class NewTest {
   }
  @Test(priority=5)
  public void verifyWebelementFunctions() {
-	 /*WebElement Disabled_Button=driver.findElement(By.xpath("//input[@class='custom-control-input disabled']"));
+	 WebElement Disabled_Button=driver.findElement(By.xpath("//input[@class='custom-control-input disabled']"));
 	 WebElement Yes_Button=driver.findElement(By.id("yesRadio"));
 	 WebElement GoogleSearch_Button=driver.findElement(By.name("btnK"));
 	 WebElement FacebookLogin_Button=driver.findElement(By.name("login"));
@@ -175,7 +175,7 @@ public class NewTest {
 	  driver.navigate().to("https://demoqa.com/text-box");
 	  File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	  System.out.println(scrFile.getAbsolutePath());
-  }*/
+  }
   @Test(priority=13)
   public void windowsHandling() throws InterruptedException {
 	  driver.navigate().to("https://demoqa.com/browser-windows");

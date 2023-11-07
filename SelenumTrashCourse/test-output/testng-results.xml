@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-27T21:38:00 IST" name="Default suite" finished-at="2022-09-27T21:38:27 IST" duration-ms="27090">
+  <suite started-at="2022-11-26T20:48:54 IST" name="Default suite" finished-at="2022-11-26T20:49:32 IST" duration-ms="38259">
     <groups>
     </groups>
-    <test started-at="2022-09-27T21:38:00 IST" name="Default test" finished-at="2022-09-27T21:38:27 IST" duration-ms="27090">
-      <class name="NewTest">
-        <test-method is-config="true" signature="intialization()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-27T21:38:00 IST" name="intialization" finished-at="2022-09-27T21:38:12 IST" duration-ms="11357" status="PASS">
+    <test started-at="2022-11-26T20:48:54 IST" name="Default test" finished-at="2022-11-26T20:49:32 IST" duration-ms="38259">
+      <class name="com.qa.ActionsSelenium.ActionsTestClass">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.qa.ActionsSelenium.ActionsTestClass@35047d03]" started-at="2022-11-26T20:48:54 IST" name="init" finished-at="2022-11-26T20:49:27 IST" duration-ms="33539" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- intialization -->
-        <test-method signature="windowsHandling()[pri:13, instance:NewTest@2667f029]" started-at="2022-09-27T21:38:12 IST" name="windowsHandling" finished-at="2022-09-27T21:38:27 IST" duration-ms="15500" status="PASS">
+        </test-method> <!-- init -->
+        <test-method signature="drragablemethodTest()[pri:0, instance:com.qa.ActionsSelenium.ActionsTestClass@35047d03]" started-at="2022-11-26T20:49:27 IST" name="drragablemethodTest" finished-at="2022-11-26T20:49:32 IST" duration-ms="4413" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- windowsHandling -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:NewTest@2667f029]" started-at="2022-09-27T21:38:27 IST" name="tearDown" finished-at="2022-09-27T21:38:27 IST" duration-ms="214" status="PASS">
+        </test-method> <!-- drragablemethodTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.ActionsSelenium.ActionsTestClass@35047d03]" started-at="2022-11-26T20:49:32 IST" name="tearDown" finished-at="2022-11-26T20:49:32 IST" duration-ms="271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- NewTest -->
+      </class> <!-- com.qa.ActionsSelenium.ActionsTestClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

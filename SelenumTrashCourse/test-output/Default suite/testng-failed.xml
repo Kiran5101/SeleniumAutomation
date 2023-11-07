@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="NewTest">
+      <class name="com.qa.ActionsSelenium.ActionsTestClass">
         <methods>
-          <include name="intialization"/>
-          <include name="verifyIsSelectedMethod"/>
+          <include name="drragablemethodTest"/>
           <include name="tearDown"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- NewTest -->
+      </class> <!-- com.qa.ActionsSelenium.ActionsTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

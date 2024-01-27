@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ArrayPrograms {
+import FirstSeleniumCourse.FirstSeleniumCourse.CapabilitiesConcept;
+
+public class ArrayPrograms extends CapabilitiesConcept {
 	
 	public void reversString(String text) {
 		String inputText=text;
@@ -85,6 +87,25 @@ public class ArrayPrograms {
 		System.out.println("Reversed String"+OutputString);
 		
 	}
+	 public  void printDuplicateChars(String str){
+	        String S=str;
+	        int count;
+	        S=S.replace(" ","");
+	        S=S.toLowerCase();
+	        char[] ch=S.toCharArray();
+	        for(int i=0;i<ch.length;i++){
+	            count=1;
+	            for(int j=i+1;j<ch.length;j++){
+	                if(ch[i]==ch[j]){
+	                    count++;
+	                    ch[j]=0;
+	                }
+	            }
+	            if(count>1 && ch[i]!=0){
+	                System.out.println(ch[i]+"::"+count);
+	            }
+	        }
+	    }
 	public static void main(String[] args) {
 		ArrayPrograms Ap=new ArrayPrograms();
 		//for(String s:copyingArrayList()) {
@@ -94,7 +115,15 @@ public class ArrayPrograms {
 		//Ap.reversString("Kiran Kumar Reddy");
 		//System.out.println(Ap.reverseStringBy("I love selenium testing"));
 		//reversingArrayList();
-		Ap.reverseString("Hello world");
+		//Ap.reverseString("Hello world");
+		Ap.printDuplicateChars("Kiran kumar Reddy");
+		try {
+			HandlingWindows();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }

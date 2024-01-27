@@ -1,5 +1,8 @@
 package JavaPrograms;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Practice {
 	public static String reverseString_UsingDefaultMethod(String entText) {
 		StringBuffer Text=new StringBuffer(entText);
@@ -26,6 +29,30 @@ public class Practice {
 		}
 		return capitalizedText.trim();
 	}
+	 public static void returnTheProcessedString(String str){
+	        String s=str,temp="";
+	        int count;
+	        char[] ch=s.toCharArray();
+	        for(int i=0;i<ch.length;i++){
+	            count=1;
+	            char x=ch[i];
+	            for(int j=i+1;j<ch.length;j++){
+	            	char y=ch[j];
+	                if(x == y){
+	                    count++;
+	                }
+	            }
+	            if(count>1){
+	                if(Character.isUpperCase(ch[i])){
+	                    temp+=Character.toLowerCase(ch[i]);
+	                }
+	                else{
+	                    temp+=Character.toUpperCase(ch[i]);
+	                }
+	            }
+	        }
+	        System.out.println(temp);
+	    }
 	public static void isPrime(int number) {
 		int Num=number,count=0;
 		if(Num<=1) {
@@ -153,19 +180,63 @@ public class Practice {
 		}
 		
 	}
+	public static void invertTheCase(String s){
+        char c;
+        String s1=s,temp="";
+        int count;
+        s1=s1.replace(" ","");
+        char[] ch=s1.toCharArray();
+        for(int i=0;i<ch.length;i++){
+            count=1;
+            for(int j=i+1;j<ch.length;j++){
+                if(ch[i]==ch[j]){
+                    count++;
+                    ch[j]=' ';
+                }
+            }
+            if(count>1 && ch[i] !=' '){
+                if(Character.isUpperCase(ch[i])){
+                    c=Character.toLowerCase(ch[i]);
+                    System.out.println(c);
+                    temp+=c;
+                }else{
+                    c=Character.toUpperCase(ch[i]);
+                }
+                
+            }
+
+        }
+       
+    }
+	 public static void capitalizeFirstLetter(String str){
+	        String s=str,temp="";
+	        String[] SA=s.split("\\s");
+	        ArrayList<String> L1=new ArrayList<String>(Arrays.asList(SA));
+	        for(int i=0;i<L1.size();i++){
+	            System.out.println(L1.get(0));
+	            String First_Letter=L1.get(i).substring(0,1).toUpperCase();
+	            String RestWord=L1.get(i).substring(1);
+	            String TotalWord=First_Letter+RestWord;
+	            temp+=TotalWord+" ";
+	        }
+	        System.out.println(temp.trim());
+	    }
 	public static void main(String[] args) {
 		//System.out.println(reverseString_UsingDefaultMethod("Hello World"));
 		//System.out.println(reverseString_usingLoops("Java Oops Concepts"));
 		//System.out.println(capitalizeWord("hello@kiran,how!are$you$man*i&am^in%bangalore"));
 		//isPrime(11);
-		//PrimeswithinRange(100);
+		//PrimeswithinRange(10);
 		//repeatedCharacters("Hello");
 		//repeatedWords("Hello Kiran Hello Mounika Kiran are you there kiran and mounika ");
 		//isArmstrong(153);
 		//isPolydrome(124341);
 		//System.out.println(specialChar("dfjjkf!bhbf@bfvbs#snkjgs%nbfbk&,mNn8"));
 		//printPattern(4);
-		printLeftTraingle(4);
+		//printLeftTraingle(4);
+		//returnTheProcessedString("Naanm");
+		capitalizeFirstLetter("helllo kiran");
+		
 	}
 
 }

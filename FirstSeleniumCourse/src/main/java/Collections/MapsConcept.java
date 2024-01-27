@@ -1,6 +1,7 @@
 package Collections;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -32,10 +33,44 @@ public class MapsConcept {
 
 		
 	}
+	public static void HashMapConcept() {
+		HashMap<Integer,String> map=new HashMap<Integer,String>();
+		map.put(1, "Mounika");
+		map.put(2, "Vinod");
+		map.put(3, "Kiran");
+		map.put(2, "ram");
+		map.put(0, "Null value");
+		map.put(5, "");
+		System.out.println(map);
+	}
+	public static void LinkedHashMapConcept() {
+		LinkedHashMap<Integer,String> map=new LinkedHashMap<Integer,String>();
+		map.put(1, "Mounika");
+		map.put(2, "Vinod");
+		map.put(3, "Kiran");
+		map.put(2, "ram");
+		map.put(0, "Null value");
+		map.put(5, "");
+		System.out.println(map);
+	}
+	public static void TreeMapConcept() {
+		TreeMap<Integer,String> map=new TreeMap<Integer,String>();
+		map.put(4, "Mounika");
+		map.put(1, "Vinod");
+		map.put(4, "Kiran");
+		map.put(5, "ram");
+		map.put(6, null);
+		map.put(5, null);
+		System.out.println(map);
+	}
+	
 	
 	public static void main(String[] args) {
-		MapsConcept mc=new MapsConcept();
-		mc.HashMap_Method();
+		//MapsConcept mc=new MapsConcept();
+		//mc.HashMap_Method();
+		//HashMapConcept();
+		LinkedHashMapConcept();
+		TreeMapConcept();
 	}
 
 }

@@ -31,7 +31,7 @@ public class GenericTestCases {
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 	}
-	@Test(dataProvider="ExcelData",dataProviderClass=GenericMethods.class,enabled=false)
+	//@Test(dataProvider="ExcelData",dataProviderClass=GenericMethods.class,enabled=false)
 	public void readingExcelData(String Username,String Pass)throws InterruptedException{
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		WebElement UserName=driver.findElement(By.xpath("//input[@name='username']"));
@@ -58,7 +58,7 @@ public class GenericTestCases {
 		System.out.println(actList.size());
 		
 	for(int j=0;j<actList.size();j++) {
-		System.out.println(actList.get(j).getAttribute("href"));
+		//System.out.println(actList.get(j).getAttribute("href"));
 		HttpURLConnection connection=(HttpURLConnection)new URL(actList.get(j).getAttribute("href")).openConnection();
 		connection.connect();
 		int status=connection.getResponseCode();
@@ -67,7 +67,7 @@ public class GenericTestCases {
 				
 	}
 	}
-	@Test
+	//@Test
 	public void selectClass() throws InterruptedException{
 		driver.get("https://www.facebook.com/r.php?locale=en_GB&display=page");
 		WebElement Day=driver.findElement(By.xpath("//select[@id='day']"));

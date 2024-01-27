@@ -22,11 +22,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class CapabilitiesConcept {
-	WebDriver driver;
+	static WebDriver driver;
 	@BeforeTest
 	public void setUP() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selenium\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -53,7 +55,7 @@ public class CapabilitiesConcept {
 		}
 	}
 	@Test(enabled=false)
-	public void HandlingWindows() throws InterruptedException {
+	public static void HandlingWindows() throws InterruptedException {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		WebElement FacebookLInk=driver.findElement(By.xpath("//a[contains(@href,'face')]"));
 		WebElement twitterLink=driver.findElement(By.xpath("//a[contains(@href,'tw')]"));
@@ -118,7 +120,7 @@ public class CapabilitiesConcept {
 		Thread.sleep(4000);
 		
 	}
-	@Test(enabled=false)
+	@Test()
 	public void handlingConfirmAlert() throws InterruptedException {
 		driver.get("https://www.hyrtutorials.com/p/alertsdemo.html");
 		WebElement DismissAlert=driver.findElement(By.xpath("//button[@id='confirmBox']"));

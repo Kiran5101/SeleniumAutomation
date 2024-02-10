@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FirstSeleniumCourse.FirstSeleniumCourse.GenericTestCases">
+      <class name="TestNGListerners.TestCases">
         <methods>
-          <include name="setUp"/>
-          <include name="selectClass"/>
+          <include name="verifcation"/>
           <include name="tearDown"/>
-          <include name="brokenLinksAndImagesHandling"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- FirstSeleniumCourse.FirstSeleniumCourse.GenericTestCases -->
+      </class> <!-- TestNGListerners.TestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

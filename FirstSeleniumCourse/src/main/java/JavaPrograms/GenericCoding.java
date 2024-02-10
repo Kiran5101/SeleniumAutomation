@@ -192,6 +192,77 @@ public class GenericCoding {
 	        }
 	        System.out.println(temp);
 	    }
+
+		/*
+		 * //Program to take the array of heads and trails ,need to update alternatively
+		 * and then return the count of alterations made.
+		 * input=[1,0,0,1,1,0]-----> output [1,0,1,0,1,0] return 2;
+		 */
+		 public static int solution(int[] a){
+		        int flips=0;
+		        int [] sequenece=a;
+		        boolean changeNeeded=false;
+		        for(int i=1;i<sequenece.length;i++){
+		            if(sequenece[i]==sequenece[i-1]){
+		                flips++;
+		                changeNeeded=true;
+		            }
+		            if(sequenece[i]==1 && changeNeeded ){
+		                sequenece[i]=0;
+		                changeNeeded=false;
+		            }else if(sequenece[i]==0 && changeNeeded ){
+		                sequenece[i]=1;
+		                changeNeeded=false;
+		            }
+		        }
+		        return flips;
+		    }
+		 public static void solution(String s){
+		        String si=s,temp="";
+		        si=si.toUpperCase();
+		        char[] ch=si.toCharArray();
+		        for(int i=1;i<ch.length;i++){
+		               int value=Character.compare(ch[i],ch[i-1]);
+		               if(value>=0){
+		                   temp+=ch[i];
+		            }
+		        }
+		        System.out.println(temp);
+		        
+		    }
+		static // you can also use imports, for example:
+		// import java.util.*;
+
+		// you can write to stdout for debugging purposes, e.g.
+		// System.out.println("this is a debug message");
+
+		class Solution {
+		    public static int summingMethod(int n){
+		        int Num=n,GivenDigitsSum=0;
+		        while(Num!=0){
+		            int R=Num%10;
+		            GivenDigitsSum+=R;
+		            Num=Num/10;
+		        }
+		        return GivenDigitsSum;
+		    }
+		    
+		    public static int solution(int N) {
+		        int input=N,Required=0;
+		        int Temp1=summingMethod(input);
+		        int Temp2=0;
+		        for(int i=input;i>input;i++){
+		            System.out.println(i);
+		            Temp2+=summingMethod(i);
+		            if(Temp1==Temp2){
+		                Required+=i;
+		                System.out.println(i);
+		                break;
+		            }
+		        }
+		        return Temp2;
+		    }
+		}
 	public static void main(String[] args) {
 		GenericCoding GC=new GenericCoding();
 		//GC.fibonacciSeries(8);
@@ -206,7 +277,11 @@ public class GenericCoding {
 		//printPattern();
 		//printleft_Triangle_Pattern();
 		//reversetheString("Ki^%^&98^%#&^:ran");
-		printReveresed("Kiran Kumar");
+		//printReveresed("Kiran Kumar");
+		//int[] b= {0,1,0};
+		//System.out.println(solution(b));
+		//solution("AABBABA");
+		solution(28);
 	}
 
 }

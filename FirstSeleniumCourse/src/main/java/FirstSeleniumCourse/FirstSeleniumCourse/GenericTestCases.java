@@ -43,7 +43,7 @@ public class GenericTestCases {
 		Login_button.click();
 		Thread.sleep(3000);	
 	}
-	@Test(priority=2)
+	//@Test(priority=2)
 	public void brokenLinksAndImagesHandling() throws MalformedURLException, IOException {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		List<WebElement> allList=driver.findElements(By.tagName("a"));
@@ -84,6 +84,21 @@ public class GenericTestCases {
 		select_year.selectByValue("1994");
 		
 		Thread.sleep(4000);
+		
+	}
+	@Test
+	public void handlingWebTables() {
+		driver.get("https://www.w3schools.com/html/html_tables.asp");
+		int rowCount=driver.findElements(By.xpath("//table[@id='customers']//descendant::tr")).size();
+		int columnCount=driver.findElements(By.xpath("//table[@id='customers']//descendant::tr//child::th")).size();
+		for(int i=1;i<rowCount;i++) {
+			for(int j=1;j<=columnCount;j++) {
+				String ActText=driver.findElement(By.xpath("//table[@id='customers']//descendant::tr["+(i+1)+"]//child::td["+j+"]")).getText();
+				if(ActText.equalsIgnoreCase("Mexico")) {
+					System.out.println(i+"::"+j);
+				}
+			}
+		}
 		
 	}
 	@AfterMethod
